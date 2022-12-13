@@ -19,6 +19,11 @@
             <textarea name="postContent" id="" cols="30" rows="5" placeholder="いまどうしてる?"></textarea>
             <div class="post-button">
                 <button class="button-white" type="submit">投稿する</button>
+                @error('postContent')
+                    <p class="text-red">
+                        {{ $messages }}
+                    <p>
+                @enderror
             </div>
         </form>
     </div>

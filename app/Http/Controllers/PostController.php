@@ -29,6 +29,13 @@ class PostController extends Controller
      */
     function store(Request $request)
     {
+        $rules = [
+            'postContent' => 'required|max:140',
+        ];
+
+        $messages = ['required' => '入力してください。', 'max' => '140文字以下にしてください。']
+
+        validator::make($request->all(), $rules, $messages)->validate();
         // セッションにログイン情報があるか確認
         if (!Session::exists('user')) {
             // ログインしていなければログインページへ
