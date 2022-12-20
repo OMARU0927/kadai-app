@@ -20,9 +20,11 @@
             <div class="post-button">
                 <button class="button-white" type="submit">投稿する</button>
                 @error('postContent')
-                    <p class="text-red">
-                        {{ $messages }}
-                    <p>
+                    <div>
+                        <p>
+                            {{ $message }}
+                        <p>
+                    <div>        
                 @enderror
             </div>
         </form>

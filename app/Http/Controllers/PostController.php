@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller,
     Session;
 
@@ -33,9 +34,9 @@ class PostController extends Controller
             'postContent' => 'required|max:140',
         ];
 
-        $messages = ['required' => '入力してください。', 'max' => '140文字以下にしてください。']
+        $messages = ['required' => '入力してください。', 'max' => '140文字以下にしてください。'];
 
-        validator::make($request->all(), $rules, $messages)->validate();
+        Validator::make($request->all(), $rules, $messages)->validate();
         // セッションにログイン情報があるか確認
         if (!Session::exists('user')) {
             // ログインしていなければログインページへ
