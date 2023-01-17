@@ -14,21 +14,27 @@
 
 <body class="">
     <x-header></x-header>
-    <div class="page singup-page">
-        <form class="form" action="/singup" method="post">
+    <div class="page signup-page">
+        <form class="form" action="/signup" method="post">
             @csrf
-            <div class="form-item email">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" />
-            </div>
-            <div class="form-item password">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" />
+            <div class="form-item username">
+                <label for="username">ユーザー名</label>
+                <input type="" id="" name="" />
             </div>
             @if ($errorMessage)
             <div class="error-message font-red">{{ $errorMessage }}</div>
             @endif
-            <div class="singup-button">
+            <div class="form-item email">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" />
+            </div>
+
+            <div class="form-item password">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" />
+            </div>
+
+            <div class="signup-button">
                 <button class="button-white" type="submit">新規登録</button>
             </div>
         </form>
@@ -36,45 +42,45 @@
 </body>
 <script src="{{ asset('/js/app.js') }}"></script>
 <style scoped>
-    .singup-page {
+    .signup-page {
         display: flex;
         justify-content: center;
     }
     
-    .singup-page .title {
+    .signup-page .title {
         font-size: 24px;
         font-weight: bold;
         text-align: center;
     }
     
-    .singup-page .form {
+    .signup-page .form {
         width: 60vw;
     }
     
-    .singup-page input {
+    .signup-page input {
         height: 30px;
         border-radius: 10px;
         background-color: lightgray;
     }
     
-    .singup-page .form-item {
+    .signup-page .form-item {
         display: flex;
         flex-direction: column;
         margin-top: 10px;
     }
     
-    .singup-page .login-button {
+    .signup-page .login-button {
         text-align: center;
         margin-top: 10px;
     }
     
-    .singup-page button {
+    .signup-page button {
         width: 50%;
         height: 30px;
         font-size: 18px;
     }
     
-    .singup-page .error-message {
+    .signup-page .error-message {
         margin-top: 5px;
         font-size: 10px;
     }
