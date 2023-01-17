@@ -9,7 +9,7 @@
 
     <title>kadai-app | 新規登録</title>
 </head>
-<!-- ログイン画面 -->
+<!-- 新規登録画面 -->
 
 
 <body class="">
