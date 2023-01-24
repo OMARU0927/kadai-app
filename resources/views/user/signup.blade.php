@@ -18,22 +18,35 @@
         <form class="form" action="/signup" method="post">
             @csrf
             <div class="form-item username">
-                <label for="username">ユーザー名</label>
-                <input type="" id="" name="" />
+                <label for="name">ユーザー名</label>
+                <input type="text" id="name" name="username" />
+                @error('name')
+                    <div class="error-message font-red">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>            
+            <div class="form-item email">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" />
+                @error('email')
+                    <div class="error-message font-red">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="form-item password">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" />
+                @error('password')
+                    <div class="error-message font-red">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             @if ($errorMessage)
             <div class="error-message font-red">{{ $errorMessage }}</div>
             @endif
-            <div class="form-item email">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" />
-            </div>
-
-            <div class="form-item password">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" />
-            </div>
-
             <div class="signup-button">
                 <button class="button-white" type="submit">新規登録</button>
             </div>
