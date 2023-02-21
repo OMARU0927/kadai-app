@@ -35,8 +35,13 @@ class HomeController extends Controller
             }
         }
 
+        if($posts == null) {
+            return view('home', compact('posts'));
+        }
+
         // 投稿を時系列順に並べ替え
         $posts = $this->sort($posts);
+        
 
         // 画面表示
         return view('home', compact('posts'));
@@ -48,7 +53,7 @@ class HomeController extends Controller
     private function sort($array)
     {
         foreach ($array as $key => $value) {
-            $standard_key_array[$key] = $value['post']['created_at'];
+            $standard_key_array[$key] = $value['post']['created_at'];        
         }
         array_multisort($standard_key_array, SORT_DESC, $array);
 
